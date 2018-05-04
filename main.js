@@ -21,7 +21,7 @@ function getAbsolutePath(dir, relative) {
 	return absolute
 }
 
-module.exports = postcss.plugin('postcss-imgPostToAlioss', options => {
+module.exports = postcss.plugin('postcss-imgpost-alioss', options => {
   return function (css) {
     const client = new oss({
       accessKeyId: options.accessKeyId,
