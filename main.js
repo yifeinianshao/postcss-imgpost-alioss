@@ -9,7 +9,7 @@ function getAbsolutePath(dir, relative) {
 
 	const reg = /\.(jpg|jpeg|png|gif|svg|bmp)\b/i
 	if (!reg.test(absolute)) {
-    console.log(`文件路径不是图片: ${absolute}`)
+    console.log(`File is not a image: ${absolute}`)
 		return
 	}
 
@@ -31,7 +31,7 @@ module.exports = postcss.plugin('postcss-imgpost-alioss', options => {
     })
     css.walkRules(ruler => {
       ruler.walkDecls(/^background(-image)?$/, decl => {
-        const imageReg = new RegExp('url\\(["\']?([^)]*?)["\']?\\)')
+        const imageReg = /url\(['\"]?([^)'\"]+)['\"]?\)/
         const matchValue = imageReg.exec(decl.value)
         if (!matchValue || matchValue[1].indexOf('data:') === 0) {
           return
@@ -51,6 +51,7 @@ module.exports = postcss.plugin('postcss-imgpost-alioss', options => {
           ? `url('${protol + options.domain + url}')`
           : `url('${protol + options.bucket}.${options.region}.aliyuncs.com/${url}')`
         decl.value = decl.value.replace(imageReg, cssUrl)
+
         co(function* () {
           const result = yield client.put(url, imageData)
         }).catch(err => {
