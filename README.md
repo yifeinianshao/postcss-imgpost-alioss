@@ -8,8 +8,8 @@ const options = {
   region: 'your ali region',
   bucket: 'your ali bucket',
   // not required
-  name: 'your filename',
   https: true,
-  domain: 'your domain'
+  domain: 'your domain', // eg: domain.com
+  name: 'your filename' // eg: filename/
 }
 ```
