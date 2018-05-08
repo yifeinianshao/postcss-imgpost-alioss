@@ -9,7 +9,7 @@ const options = {
   bucket: 'your ali bucket',
   // not required
   https: true,
-  domain: 'your domain', // eg: domain.com
-  name: 'your filename' // eg: filename/
+  domain: 'your domain', // eg: 'domain.com/'
+  name: 'your filename' // eg: 'filename/'
 }
 ```
