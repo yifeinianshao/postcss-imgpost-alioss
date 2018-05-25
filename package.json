@@ -1,8 +1,15 @@
 {
   "name": "postcss-imgpost-alioss",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
+  "keywords": [
+    "postcss",
+    "plugin",
+    "ali-oss"
+  ],
   "license": "MIT",
+  "author": "yifeinianshao",
+  "git repository": "https://github.com/yifeinianshao/postcss-imgpost-alioss.git",
   "dependencies": {
     "ali-oss": "^5.1.1",
     "co": "^4.6.0",
